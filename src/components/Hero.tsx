@@ -1,4 +1,4 @@
-import { heroTrustIndicators, WHATSAPP_URL } from "@/lib/constants";
+import { cta, heroTrustIndicators, WHATSAPP_URL } from "@/lib/constants";
 import { IconWhatsApp } from "./icons";
 
 export function Hero() {
@@ -47,13 +47,13 @@ export function Hero() {
             className="group inline-flex h-14 items-center justify-center gap-3 rounded-full bg-[#25D366] px-8 text-base font-semibold text-white shadow-lg shadow-emerald-900/30 transition hover:bg-[#20bd5a] hover:shadow-emerald-900/40"
           >
             <IconWhatsApp className="h-5 w-5" />
-            Hablar por WhatsApp
+            {cta.heroPrimary}
           </a>
           <a
             href="#servicios"
             className="inline-flex h-14 items-center justify-center rounded-full border border-white/10 px-8 text-base font-medium text-zinc-300 transition hover:border-white/20 hover:bg-white/[0.04] hover:text-zinc-100"
           >
-            Ver servicios
+            {cta.heroSecondary}
           </a>
         </div>
 

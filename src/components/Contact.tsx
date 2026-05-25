@@ -1,4 +1,4 @@
-import { WHATSAPP_URL } from "@/lib/constants";
+import { cta, WHATSAPP_URL } from "@/lib/constants";
 import { IconWhatsApp } from "./icons";
 
 export function Contact() {
@@ -26,7 +26,7 @@ export function Contact() {
           className="mt-10 inline-flex h-14 items-center justify-center gap-3 rounded-full bg-[#25D366] px-10 text-base font-semibold text-white transition hover:bg-[#20bd5a]"
         >
           <IconWhatsApp className="h-5 w-5" />
-          Iniciar conversación
+          {cta.final}
         </a>
       </div>
     </section>
