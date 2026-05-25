@@ -7,6 +7,24 @@ export const WHATSAPP_MESSAGE = encodeURIComponent(
 
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
+export const heroTrustIndicators = [
+  {
+    title: "IA aplicada a negocio",
+    description:
+      "Soluciones enfocadas en eficiencia, atención y escalabilidad real.",
+  },
+  {
+    title: "Automatización escalable",
+    description:
+      "Diseñamos flujos que crecen con tus procesos y herramientas.",
+  },
+  {
+    title: "Integraciones reales",
+    description:
+      "Conectamos APIs, plataformas y sistemas de forma estable.",
+  },
+] as const;
+
 export const services = [
   {
     title: "Automatización de procesos",
