@@ -1,6 +1,6 @@
 import { BrandLogo } from "@/components/BrandLogo";
 import { brand, whatsapp } from "@/lib/brand";
-import { cta, heroTrustIndicators, WHATSAPP_URL } from "@/lib/constants";
+import { cta, WHATSAPP_URL } from "@/lib/constants";
 import { IconWhatsApp } from "./icons";
 
 export function Hero() {
@@ -69,26 +69,6 @@ export function Hero() {
             {cta.heroSecondary}
           </a>
         </div>
-
-        <dl className="mt-20 grid grid-cols-1 gap-8 border-t border-white/[0.06] pt-10 sm:grid-cols-3 sm:gap-6">
-          {heroTrustIndicators.map((indicator, index) => (
-            <div
-              key={indicator.title}
-              className={
-                index > 0
-                  ? "sm:border-l sm:border-white/[0.06] sm:pl-6"
-                  : undefined
-              }
-            >
-              <dt className="text-base font-semibold leading-snug tracking-tight text-zinc-100 sm:text-lg">
-                {indicator.title}
-              </dt>
-              <dd className="mt-2 text-sm leading-relaxed text-zinc-500">
-                {indicator.description}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );

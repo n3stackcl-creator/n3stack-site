@@ -1,4 +1,5 @@
 import { AgentDemo } from "@/components/AgentDemo";
+import { Capabilities } from "@/components/Capabilities";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
@@ -13,8 +14,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <HowWeWork />
         <AgentDemo />
+        <Capabilities />
+        <HowWeWork />
         <Services />
         <Contact />
       </main>

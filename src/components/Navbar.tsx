@@ -15,6 +15,9 @@ export function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-8 text-sm text-zinc-400 md:flex">
+          <a href="#demo" className="transition-colors hover:text-zinc-100">
+            Demo
+          </a>
           <a href="#proceso" className="transition-colors hover:text-zinc-100">
             Proceso
           </a>
