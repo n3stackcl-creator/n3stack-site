@@ -1,11 +1,13 @@
+import { BrandLogo } from "@/components/BrandLogo";
+import { brand, whatsapp } from "@/lib/brand";
 import { cta, heroTrustIndicators, WHATSAPP_URL } from "@/lib/constants";
 import { IconWhatsApp } from "./icons";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col justify-center overflow-hidden px-6 pt-16">
+    <section className="relative flex min-h-screen flex-col justify-center overflow-hidden px-6 pt-[4.25rem] sm:pt-[4.5rem]">
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(16,185,129,0.15),transparent)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(37,99,235,0.18),transparent)]"
         aria-hidden
       />
       <div
@@ -17,21 +19,32 @@ export function Hero() {
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute -left-24 bottom-1/4 h-80 w-80 rounded-full bg-emerald-500/10 blur-3xl"
+        className="pointer-events-none absolute -left-24 bottom-1/4 h-80 w-80 rounded-full bg-blue-600/10 blur-3xl"
         aria-hidden
       />
 
-      <div className="relative mx-auto w-full max-w-6xl">
+      {/* Isotipo watermark — balance visual derecho */}
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[min(52vw,640px)] md:block"
+        aria-hidden
+      >
+        <div className="relative flex h-full items-center justify-end pr-4 lg:pr-8">
+          <BrandLogo
+            variant="icon"
+            className={`${brand.heroWatermark} translate-x-[8%] lg:translate-x-[4%]`}
+          />
+        </div>
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-6xl">
         <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-1.5 text-xs font-medium tracking-wide text-zinc-400">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+          <span className={brand.heroBadgeDot} />
           Agencia de automatización e IA
         </p>
 
         <h1 className="max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight text-zinc-50 sm:text-5xl md:text-6xl lg:text-7xl">
           Tu negocio,
-          <span className="block bg-gradient-to-r from-emerald-200 via-cyan-200 to-emerald-300 bg-clip-text text-transparent">
-            en piloto automático.
-          </span>
+          <span className={brand.heroGradient}>en piloto automático.</span>
         </h1>
 
         <p className="mt-8 max-w-xl text-lg leading-relaxed text-zinc-400 md:text-xl">
@@ -44,14 +57,14 @@ export function Hero() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex h-14 items-center justify-center gap-3 rounded-full bg-[#25D366] px-8 text-base font-semibold text-white shadow-lg shadow-emerald-900/30 transition hover:bg-[#20bd5a] hover:shadow-emerald-900/40"
+            className={`group inline-flex h-14 items-center justify-center gap-3 px-8 text-base ${whatsapp.cta} ${whatsapp.shadow}`}
           >
             <IconWhatsApp className="h-5 w-5" />
             {cta.heroPrimary}
           </a>
           <a
             href="#servicios"
-            className="inline-flex h-14 items-center justify-center rounded-full border border-white/10 px-8 text-base font-medium text-zinc-300 transition hover:border-white/20 hover:bg-white/[0.04] hover:text-zinc-100"
+            className="inline-flex h-14 items-center justify-center rounded-full border border-white/10 px-8 text-base font-medium text-zinc-300 transition hover:border-blue-400/25 hover:bg-white/[0.04] hover:text-zinc-100"
           >
             {cta.heroSecondary}
           </a>

@@ -1,15 +1,32 @@
 @import "tailwindcss";
 
 :root {
+  /* Base */
   --background: #050508;
+  --surface: #0a0a0f;
   --foreground: #fafafa;
-  --accent: #34d399;
-  --accent-muted: #06b6d4;
+
+  /* N3Stack brand — electric blue + cyan */
+  --brand-primary: #3b82f6;
+  --brand-primary-bright: #60a5fa;
+  --brand-primary-deep: #2563eb;
+  --brand-secondary: #22d3ee;
+  --brand-secondary-deep: #06b6d4;
+
+  /* WhatsApp (isolated) */
+  --whatsapp: #25d366;
+  --whatsapp-hover: #20bd5a;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
+  --color-brand: var(--brand-primary);
+  --color-brand-light: var(--brand-primary-bright);
+  --color-brand-deep: var(--brand-primary-deep);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-whatsapp: var(--whatsapp);
   --font-sans: var(--font-sans);
 }
 
@@ -24,8 +41,8 @@ body {
 }
 
 ::selection {
-  background: rgba(52, 211, 153, 0.25);
-  color: #ecfdf5;
+  background: rgba(59, 130, 246, 0.28);
+  color: #eff6ff;
 }
 
 @keyframes chat-fade-in {

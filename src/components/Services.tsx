@@ -1,3 +1,4 @@
+import { brand } from "@/lib/brand";
 import { services } from "@/lib/constants";
 import { ServiceIcon } from "./icons";
 
@@ -6,9 +7,7 @@ export function Services() {
     <section id="servicios" className="relative border-t border-white/[0.06] px-6 py-28">
       <div className="mx-auto max-w-6xl">
         <div className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-widest text-emerald-400/90">
-            Servicios
-          </p>
+          <p className={brand.eyebrow}>Servicios</p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-zinc-50 sm:text-4xl">
             Todo lo que necesitas para automatizar con confianza
           </h2>
@@ -21,9 +20,9 @@ export function Services() {
           {services.map((service) => (
             <li
               key={service.title}
-              className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 transition hover:border-emerald-400/20 hover:bg-white/[0.04]"
+              className={`group rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 ${brand.cardHover}`}
             >
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500/10 to-cyan-500/5 text-emerald-300 ring-1 ring-white/[0.08] transition group-hover:ring-emerald-400/25">
+              <div className={brand.iconTile}>
                 <ServiceIcon name={service.icon} className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-medium text-zinc-100">{service.title}</h3>
