@@ -60,13 +60,13 @@ export function Hero() {
             className={`group inline-flex h-14 items-center justify-center gap-3 px-8 text-base ${whatsapp.cta} ${whatsapp.shadow}`}
           >
             <IconWhatsApp className="h-5 w-5" />
-            {cta.heroPrimary}
+            {cta.primary}
           </a>
           <a
             href="#servicios"
-            className="inline-flex h-14 items-center justify-center rounded-full border border-white/10 px-8 text-base font-medium text-zinc-300 transition hover:border-blue-400/25 hover:bg-white/[0.04] hover:text-zinc-100"
+            className={`h-14 px-8 text-base ${brand.secondaryCta}`}
           >
-            {cta.heroSecondary}
+            {cta.secondary}
           </a>
         </div>
       </div>

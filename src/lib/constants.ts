@@ -2,16 +2,26 @@
 export const WHATSAPP_NUMBER = "56976177680";
 
 export const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Hola, me interesa conocer cómo pueden automatizar procesos en mi negocio."
+  "Hola N3Stack, quiero conocer cómo podrían ayudarme a automatizar procesos en mi negocio."
 );
 
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
 export const cta = {
-  heroPrimary: "Agenda una conversación",
-  heroSecondary: "Ver servicios",
-  whatsapp: "Cuéntanos qué quieres automatizar",
-  final: "Agenda una conversación",
+  primary: "Agenda una conversación",
+  secondary: "Ver servicios",
+  demo: "Prueba un escenario",
+} as const;
+
+export const navLinks = [
+  { href: "#proceso", label: "Proceso" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#demo", label: "Demo" },
+  { href: "#contacto", label: "Contacto" },
+] as const;
+
+export const site = {
+  tagline: "Automatización · IA · Integraciones",
 } as const;
 
 export const heroTrustIndicators = [
@@ -64,8 +74,8 @@ export const agentDemo = {
   title: "Prueba un agente N3Stack",
   subtitle:
     "Visualiza cómo una IA puede responder consultas, detectar oportunidades y activar procesos comerciales en segundos.",
-  emptyHint: "Selecciona un escenario para iniciar la demo.",
-  inputPlaceholder: "Selecciona un escenario para probar el agente…",
+  emptyHint: cta.demo,
+  inputPlaceholder: "Elige un escenario arriba para iniciar la demo",
   agentWritingLabel: "Agente escribiendo...",
   chatCtaTitle: "¿Quieres algo así en tu negocio?",
   chatCtaSubtitle:

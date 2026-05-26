@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
 import { brand } from "@/lib/brand";
-import { cta, WHATSAPP_URL } from "@/lib/constants";
+import { cta, navLinks, WHATSAPP_URL } from "@/lib/constants";
 
 export function Navbar() {
   return (
@@ -14,19 +14,16 @@ export function Navbar() {
           <BrandLogo variant="mark" priority />
         </Link>
 
-        <div className="hidden items-center gap-8 text-sm text-zinc-400 md:flex">
-          <a href="#demo" className="transition-colors hover:text-zinc-100">
-            Demo
-          </a>
-          <a href="#proceso" className="transition-colors hover:text-zinc-100">
-            Proceso
-          </a>
-          <a href="#servicios" className="transition-colors hover:text-zinc-100">
-            Servicios
-          </a>
-          <a href="#contacto" className="transition-colors hover:text-zinc-100">
-            Contacto
-          </a>
+        <div className="hidden items-center gap-8 text-sm md:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-zinc-400 transition-colors hover:text-zinc-100"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
 
         <a
@@ -35,7 +32,7 @@ export function Navbar() {
           rel="noopener noreferrer"
           className={brand.navCta}
         >
-          {cta.whatsapp}
+          {cta.primary}
         </a>
       </nav>
     </header>

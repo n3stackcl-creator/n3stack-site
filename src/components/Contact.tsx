@@ -27,7 +27,7 @@ export function Contact() {
           className={`mt-10 inline-flex h-14 items-center justify-center gap-3 px-10 text-base ${whatsapp.cta}`}
         >
           <IconWhatsApp className="h-5 w-5" />
-          {cta.final}
+          {cta.primary}
         </a>
       </div>
     </section>

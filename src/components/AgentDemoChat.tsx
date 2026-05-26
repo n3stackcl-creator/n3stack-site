@@ -240,7 +240,7 @@ export function AgentDemoChat() {
           rel="noopener noreferrer"
           className={`mt-6 inline-flex h-12 w-full items-center justify-center px-6 text-sm sm:mt-8 sm:h-14 sm:w-auto sm:px-10 sm:text-base ${whatsapp.cta} ${whatsapp.shadow}`}
         >
-          {cta.heroPrimary}
+          {cta.primary}
         </a>
       </div>
     </div>

@@ -38,7 +38,11 @@ export const brand = {
   typingDotSm: "bg-blue-300",
   navMark: "py-1",
   navCta:
-    "inline-flex max-w-[10.5rem] items-center justify-center rounded-full border border-blue-400/20 bg-blue-500/[0.04] px-3 py-2 text-center text-xs font-medium leading-snug text-blue-200/90 transition hover:border-cyan-400/30 hover:bg-blue-500/[0.08] hover:text-cyan-100 sm:max-w-none sm:px-4 sm:text-sm",
+    "inline-flex shrink-0 items-center justify-center rounded-full border border-blue-400/20 bg-blue-500/[0.04] px-3.5 py-2 text-xs font-medium text-blue-200/90 transition hover:border-cyan-400/30 hover:bg-blue-500/[0.08] hover:text-cyan-100 sm:px-4 sm:text-sm",
+  secondaryCta:
+    "inline-flex items-center justify-center rounded-full border border-white/10 font-medium text-zinc-300 transition hover:border-blue-400/25 hover:bg-white/[0.04] hover:text-zinc-100",
+  footerLink:
+    "text-sm text-zinc-500 transition-colors hover:text-zinc-200",
   heroWatermark:
     "pointer-events-none absolute z-0 h-[min(42vh,380px)] w-auto select-none opacity-[0.06] mix-blend-screen [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_72%)] sm:h-[min(48vh,440px)] sm:opacity-[0.07] lg:h-[min(58vh,520px)] lg:opacity-[0.08]",
 } as const;
