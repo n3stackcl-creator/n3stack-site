@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     description: "Tu negocio, en piloto automático.",
     type: "website",
   },
+  other: {
+    "facebook-domain-verification": "61pu7ebamkmlbxz6ub1siymrjzuby7",
+  },
 };
 
 export default function RootLayout({
