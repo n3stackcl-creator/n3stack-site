@@ -54,7 +54,7 @@ export const legalLinks = [
   { href: "/terminos", label: "Términos y Condiciones" },
 ] as const;
 
-export const legalPrivacyUpdatedAt = "25 de mayo de 2026";
+export const legalPrivacyUpdatedAt = "15 de junio de 2026";
 export const legalTermsUpdatedAt = "15 de junio de 2026";
 
 export const heroTrustIndicators = [
