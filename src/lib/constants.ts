@@ -37,8 +37,12 @@ export const site = {
 export const company = {
   legalName: "N3Stack SpA",
   tradeName: "N3Stack",
+  rut: "78.434.803-2",
+  address:
+    "Fernando Rioja 145, Depto 203, La Cisterna, Región Metropolitana, Chile.",
   email: "contacto@n3stack.cl",
   website: "n3stack.cl",
+  websiteUrl: "https://n3stack.cl",
   country: "Chile",
   jurisdiction: "República de Chile",
   description:
@@ -50,7 +54,8 @@ export const legalLinks = [
   { href: "/terminos", label: "Términos y Condiciones" },
 ] as const;
 
-export const legalUpdatedAt = "25 de mayo de 2026";
+export const legalPrivacyUpdatedAt = "25 de mayo de 2026";
+export const legalTermsUpdatedAt = "15 de junio de 2026";
 
 export const heroTrustIndicators = [
   {

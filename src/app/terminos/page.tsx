@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
-import { LegalPageShell, LegalSection } from "@/components/LegalPageShell";
+import { LegalPageShell, LegalSection, CompanyInfoBlock } from "@/components/LegalPageShell";
 import { Navbar } from "@/components/Navbar";
-import { company, legalUpdatedAt } from "@/lib/constants";
+import { company, legalTermsUpdatedAt } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Términos y Condiciones | N3Stack",
@@ -18,15 +18,17 @@ export default function TermsPage() {
         <LegalPageShell
           title="Términos y Condiciones"
           description={`Estos Términos y Condiciones regulan el acceso al sitio web y la contratación de servicios ofrecidos por ${company.legalName}. Al utilizar nuestro sitio o contratar nuestros servicios, declaras haber leído y aceptado estas condiciones.`}
-          updatedAt={legalUpdatedAt}
+          updatedAt={legalTermsUpdatedAt}
         >
+          <CompanyInfoBlock />
+
           <LegalSection title="1. Identificación del prestador">
             <p>
               Los servicios son prestados por{" "}
               <strong className="font-medium text-zinc-300">
                 {company.legalName}
               </strong>{" "}
-              ({company.tradeName}), empresa chilena dedicada a{" "}
+              (RUT {company.rut}), con domicilio en {company.address}, dedicada a{" "}
               {company.description}.
             </p>
             <p>
@@ -37,7 +39,15 @@ export default function TermsPage() {
               >
                 {company.email}
               </a>{" "}
-              · Sitio web: {company.website}
+              · Sitio web:{" "}
+              <a
+                href={company.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 transition-colors hover:text-cyan-300"
+              >
+                {company.websiteUrl}
+              </a>
             </p>
           </LegalSection>
 
@@ -178,10 +188,11 @@ export default function TermsPage() {
           <LegalSection title="12. Ley aplicable y jurisdicción">
             <p>
               Estos Términos y Condiciones se rigen por las leyes de la{" "}
-              {company.jurisdiction}. Cualquier controversia derivada de su
-              interpretación o cumplimiento será sometida a los tribunales
-              ordinarios de justicia competentes en Chile, salvo pacto en contrario
-              entre las partes.
+              {company.jurisdiction}. {company.legalName}, con domicilio en{" "}
+              {company.address}, podrá someter cualquier controversia derivada de
+              su interpretación o cumplimiento a los tribunales ordinarios de
+              justicia competentes en Chile, salvo pacto en contrario entre las
+              partes.
             </p>
           </LegalSection>
 
@@ -193,8 +204,8 @@ export default function TermsPage() {
                 className="text-blue-400 transition-colors hover:text-cyan-300"
               >
                 {company.email}
-              </a>
-              .
+              </a>{" "}
+              o contactarnos en {company.address}.
             </p>
           </LegalSection>
         </LegalPageShell>

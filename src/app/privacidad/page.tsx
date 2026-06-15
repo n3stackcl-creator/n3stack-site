@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
-import { LegalPageShell, LegalSection } from "@/components/LegalPageShell";
+import { LegalPageShell, LegalSection, CompanyInfoBlock } from "@/components/LegalPageShell";
 import { Navbar } from "@/components/Navbar";
-import { company, legalUpdatedAt } from "@/lib/constants";
+import { company, legalPrivacyUpdatedAt } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Política de Privacidad | N3Stack",
@@ -18,16 +18,18 @@ export default function PrivacyPolicyPage() {
         <LegalPageShell
           title="Política de Privacidad"
           description={`En ${company.legalName} respetamos tu privacidad y protegemos tus datos personales conforme a la legislación chilena vigente, en particular la Ley N° 19.628 sobre Protección de la Vida Privada.`}
-          updatedAt={legalUpdatedAt}
+          updatedAt={legalPrivacyUpdatedAt}
         >
+          <CompanyInfoBlock />
+
           <LegalSection title="1. Responsable del tratamiento">
             <p>
               El responsable del tratamiento de los datos personales es{" "}
               <strong className="font-medium text-zinc-300">
                 {company.legalName}
               </strong>{" "}
-              ({company.tradeName}), empresa constituida en {company.country},
-              dedicada a {company.description}.
+              (RUT {company.rut}), con domicilio en {company.address}, dedicada a{" "}
+              {company.description}.
             </p>
             <p>
               Contacto para consultas de privacidad:{" "}
@@ -36,6 +38,15 @@ export default function PrivacyPolicyPage() {
                 className="text-blue-400 transition-colors hover:text-cyan-300"
               >
                 {company.email}
+              </a>{" "}
+              · Sitio web:{" "}
+              <a
+                href={company.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 transition-colors hover:text-cyan-300"
+              >
+                {company.websiteUrl}
               </a>
               .
             </p>

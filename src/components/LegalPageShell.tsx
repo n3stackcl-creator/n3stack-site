@@ -1,6 +1,55 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { brand } from "@/lib/brand";
+import { company } from "@/lib/constants";
+
+export function CompanyInfoBlock() {
+  return (
+    <aside className="mb-10 rounded-xl border border-blue-400/15 bg-blue-500/[0.04] p-5 sm:p-6">
+      <p className="text-xs font-medium uppercase tracking-widest text-blue-400/80">
+        Información del titular
+      </p>
+      <dl className="mt-4 space-y-3 text-sm">
+        <div>
+          <dt className="text-zinc-500">Razón social</dt>
+          <dd className="font-medium text-zinc-200">{company.legalName}</dd>
+        </div>
+        <div>
+          <dt className="text-zinc-500">RUT</dt>
+          <dd className="text-zinc-200">{company.rut}</dd>
+        </div>
+        <div>
+          <dt className="text-zinc-500">Domicilio</dt>
+          <dd className="text-zinc-200">{company.address}</dd>
+        </div>
+        <div>
+          <dt className="text-zinc-500">Correo</dt>
+          <dd>
+            <a
+              href={`mailto:${company.email}`}
+              className="text-blue-400 transition-colors hover:text-cyan-300"
+            >
+              {company.email}
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt className="text-zinc-500">Sitio web</dt>
+          <dd>
+            <a
+              href={company.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 transition-colors hover:text-cyan-300"
+            >
+              {company.websiteUrl}
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </aside>
+  );
+}
 
 export function LegalSection({
   title,
