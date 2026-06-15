@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { HowWeWork } from "@/components/HowWeWork";
 import { Navbar } from "@/components/Navbar";
+import { PricingPlans } from "@/components/PricingPlans";
 import { Services } from "@/components/Services";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
@@ -18,6 +19,7 @@ export default function Home() {
         <Capabilities />
         <HowWeWork />
         <Services />
+        <PricingPlans />
         <Contact />
       </main>
       <Footer />

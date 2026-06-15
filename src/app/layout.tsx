@@ -33,6 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${outfit.variable} h-full antialiased`}>
+      <head><meta name="facebook-domain-verification" content="61pu7ebamkmlbxz6ub1siymrjzuby7" /></head>
       <body className="min-h-full bg-background text-zinc-100">{children}</body>
     </html>
   );

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
 import { brand } from "@/lib/brand";
-import { cta, navLinks, WHATSAPP_URL } from "@/lib/constants";
+import { cta, navLinks, siteHref, WHATSAPP_URL } from "@/lib/constants";
 
 export function Navbar() {
   return (
@@ -18,7 +18,7 @@ export function Navbar() {
           {navLinks.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={siteHref(link.href)}
               className="text-zinc-400 transition-colors hover:text-zinc-100"
             >
               {link.label}

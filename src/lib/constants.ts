@@ -7,6 +7,15 @@ export const WHATSAPP_MESSAGE = encodeURIComponent(
 
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
+export function getWhatsAppUrl(message: string) {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+/** Resuelve anclas de la home (ej. #demo → /#demo) desde cualquier ruta. */
+export function siteHref(href: string) {
+  return href.startsWith("#") ? `/${href}` : href;
+}
+
 export const cta = {
   primary: "Agenda una conversación",
   secondary: "Ver servicios",
@@ -16,6 +25,7 @@ export const cta = {
 export const navLinks = [
   { href: "#proceso", label: "Proceso" },
   { href: "#servicios", label: "Servicios" },
+  { href: "#planes", label: "Planes" },
   { href: "#demo", label: "Demo" },
   { href: "#contacto", label: "Contacto" },
 ] as const;
@@ -23,6 +33,24 @@ export const navLinks = [
 export const site = {
   tagline: "Automatización · IA · Integraciones",
 } as const;
+
+export const company = {
+  legalName: "N3Stack SpA",
+  tradeName: "N3Stack",
+  email: "contacto@n3stack.cl",
+  website: "n3stack.cl",
+  country: "Chile",
+  jurisdiction: "República de Chile",
+  description:
+    "automatización de procesos, inteligencia artificial, CRM, sitios web e integraciones digitales",
+} as const;
+
+export const legalLinks = [
+  { href: "/privacidad", label: "Política de Privacidad" },
+  { href: "/terminos", label: "Términos y Condiciones" },
+] as const;
+
+export const legalUpdatedAt = "25 de mayo de 2026";
 
 export const heroTrustIndicators = [
   {
@@ -141,3 +169,70 @@ export const services = [
     icon: "chart",
   },
 ] as const;
+
+export const pricingPlans = {
+  title: "Planes de inversión",
+  subtitle: "Elige el nivel de digitalización que mejor se adapta a tu negocio.",
+  plans: [
+    {
+      id: "presencia-digital",
+      name: "Presencia Digital",
+      recommended: false,
+      monthly: 39990,
+      monthlyActivation: 149990,
+      annual: 399990,
+      annualLabel: "Plan anual",
+      features: [
+        "Hosting Premium",
+        "Dominio .cl o .com",
+        "Sitio Web Profesional",
+        "Monitoreo 24/7",
+        "Soporte Correctivo",
+        "Ajustes menores",
+      ],
+      cta: "Contratar anual",
+      whatsappMessage:
+        "Hola N3Stack, quiero contratar el plan anual Presencia Digital.",
+    },
+    {
+      id: "empleado-digital",
+      name: "Empleado Digital",
+      recommended: true,
+      monthly: 69990,
+      monthlyActivation: 249990,
+      annual: 699990,
+      annualLabel: "Plan anual recomendado",
+      features: [
+        "Todo lo de Presencia Digital",
+        "Asistente IA Avanzado",
+        "WhatsApp Inteligente",
+        "Auto-respuestas 24/7",
+        "Optimización continua",
+      ],
+      cta: "Activar plan anual",
+      whatsappMessage:
+        "Hola N3Stack, quiero activar el plan anual Empleado Digital.",
+    },
+    {
+      id: "fuerza-comercial",
+      name: "Fuerza Comercial",
+      recommended: false,
+      monthly: 99990,
+      monthlyActivation: 399990,
+      annual: 999990,
+      annualLabel: "Plan anual",
+      features: [
+        "Todo lo de Empleado Digital",
+        "CRM Comercial Completo",
+        "Seguimiento de Leads",
+        "Automatización de Ventas",
+        "Gestión de Oportunidades",
+      ],
+      cta: "Contratar anual",
+      whatsappMessage:
+        "Hola N3Stack, quiero contratar el plan anual Fuerza Comercial.",
+    },
+  ],
+} as const;
+
+export type PricingPlan = (typeof pricingPlans.plans)[number];
